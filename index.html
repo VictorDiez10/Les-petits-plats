@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/les petits plats/src/style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="bg-[url(./images/Logo/Maskgroup.png)] h-200 bg-no-repeat bg-cover">
+        <div class="flex pt-15 ml-15">
+          <img src="./images/Logo/LespetitsplatsLogo.png" alt="Les petits plats">
+        </div>
+        <div class="flex justify-center pt-50">
+          <h1 class="flex text-center leading-[130%] text-[#FFD15B] font-normal text-4xl font-[Anton] mr-110 ml-110">CHERCHEZ PARMI PLUS DE 1500 RECETTES </br> DU QUOTIDIEN,SIMPLES ET DÉLICIEUSES</h1>
+        </div>
+        <div class="flex justify-center mt-8">
+  <div class="flex items-center bg-white rounded-xl px-4 py-3 w-full max-w-4xl shadow">
+    <input
+      type="text"
+      placeholder="Rechercher une recette, un ingrédient..."
+      class="flex-1 bg-transparent text-sm text-gray-800 placeholder-gray-400 focus:outline-none w-full"
+      name="search"
+    />
+    <button class="bg-black p-2 rounded-lg cursor-pointer transition hover:bg-[#FFD15B]">
+      <img src="./images/Logo/loupe.png" class="h-7 w-7"/>
+    </button>
+  </div>
+</div>
+      </header>
+      <div id="filters" class="flex gap-4 flex-wrap px-4 py-2 bg-[#ededed]"></div>
+
+      <main class="bg-[#ededed]">
+        <div id="recipe-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4 justify-items-center">
+        </div>
+      </main>
+    </div>
+    <script type="module" src="./scripts/api.js"></script>
+    <script type="module" src="./scripts/filtre.js"></script>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
