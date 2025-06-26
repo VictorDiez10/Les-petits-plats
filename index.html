@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="/les petits plats/src/style.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +26,7 @@
     <input
       type="text"
       placeholder="Rechercher une recette, un ingrédient..."
-      class="flex-1 bg-transparent text-sm text-gray-800 placeholder-gray-400 focus:outline-none w-full"
+      class="flex-1 bg-transparent text-sm text-gray-800 placeholder-gray-400 focus:outline-none w-full search"
       name="search"
     />
     <button class="bg-black p-2 rounded-lg cursor-pointer transition hover:bg-[#FFD15B]">
@@ -46,5 +45,6 @@
     <script type="module" src="./scripts/api.js"></script>
     <script type="module" src="./scripts/filtre.js"></script>
     <script type="module" src="./scripts/main.js"></script>
+    <script type="module" src="./scripts/search.js"></script>
   </body>
 </html>

@@ -2,7 +2,7 @@ import recipes from './recipe.js';
 
 function createRecipeCard(recipe) {
   const card = document.createElement('div')
-  card.className = 'bg-white rounded-2xl shadow-md overflow-hidden w-full max-w-md'
+  card.className = 'bg-white rounded-2xl shadow-md overflow-hidden w-full max-w-md card'
 
   card.innerHTML = `
     <div class="relative">
