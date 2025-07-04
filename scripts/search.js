@@ -16,5 +16,23 @@ searchBar.addEventListener("input", () => {
   });
 });
 
+document.querySelectorAll('.filter-search').forEach(input => {
+  input.addEventListener('input', () => {
+    const searchTerm = input.value.toLowerCase();
+    const list = input.parentElement.querySelector('.filter-list');
+    const items = list.querySelectorAll('li');
+
+    items.forEach(item => {
+      const text = item.textContent.toLowerCase();
+      if (text.includes(searchTerm)) {
+        item.style.display = "";
+      } else {
+        item.style.display = "none";
+      }
+    });
+  });
+});
+
+
 
 
