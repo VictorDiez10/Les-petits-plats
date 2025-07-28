@@ -1,3 +1,6 @@
+import { updateRecipeCount } from './main.js';
+
+
 const searchBar = document.querySelector(".search");
 const resultsList = document.getElementById("recipe-container");
 const items = Array.from(resultsList.getElementsByClassName("card"));
@@ -13,6 +16,8 @@ searchBar.addEventListener("input", () => {
     } else {
       card.style.display = "none"; // Masque la carte
     }
+    updateRecipeCount();
+
   });
 });
 

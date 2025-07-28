@@ -1,4 +1,5 @@
 import recipes from './recipe.js';
+import { updateRecipeCount } from './main.js';
 
 function createRecipeCard(recipe) {
   const card = document.createElement('div')
@@ -39,6 +40,8 @@ function displayAllRecipes() {
     const card = createRecipeCard(recipe)
     container.appendChild(card)
   })
+
+  updateRecipeCount()
 }
 
 displayAllRecipes()

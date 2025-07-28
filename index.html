@@ -30,13 +30,16 @@
       name="search"
     />
     <button class="bg-black p-2 rounded-lg cursor-pointer transition hover:bg-[#FFD15B]">
-      <img src="./images/Logo/loupe.png" class="h-7 w-7"/>
+      <img src="./images/Logo/loupe.png" alt="loupe" class="h-7 w-7"/>
     </button>
   </div>
 </div>
       </header>
-      <div id="filters" class="flex gap-4 flex-wrap px-4 py-2 bg-[#ededed]"></div>
-      <div class="flex gap-2 flex-wrap mb-6" id="active-tags"></div>
+      <div class="flex bg-[#ededed] gap-20">
+        <div id="filters" class="flex gap-20 px-22 py-4 bg-[#ededed] "></div>
+        <div id="recipe-count" class="flex font-[Anton] text-md ml-auto bg-[#ededed] px-22 py-4 items-center">00 recettes</div>
+      </div>
+      <div class="flex gap-2 flex-wrap bg-[#ededed] px-22 py-4 p-8" id="active-tags"></div>
       <main class="bg-[#ededed]">
         <div id="recipe-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4 justify-items-center">
         </div>

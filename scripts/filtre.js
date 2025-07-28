@@ -2,12 +2,12 @@ import { addTag } from './tags.js';
 
 export function createFilterDropdown(title, items = []) {
   const container = document.createElement('div');
-  container.className = "relative inline-block w-52";
+  container.className = "relative inline-block w-52 cursor-pointer";
 
   const button = document.createElement('button');
   button.className = `
-    w-full bg-gray-100 text-gray-800 font-medium py-2 px-4 rounded-md shadow 
-    flex justify-between items-center hover:bg-gray-200
+    w-full bg-gray-100 text-base text-gray-800 font-medium py-4 px-4 rounded-xl shadow 
+    flex justify-between items-center hover:bg-gray-200 cursor-pointer
   `;
   button.innerHTML = `
     <span>${title}</span>
@@ -22,7 +22,7 @@ export function createFilterDropdown(title, items = []) {
     hidden max-h-60 overflow-y-auto
   `;
 
-  // 👉 Barre de recherche dans le dropdown
+  // Barre de recherche dans le dropdown
   const input = document.createElement('input');
   input.type = 'text';
   input.placeholder = `Rechercher ${title.toLowerCase()}...`;
@@ -40,7 +40,7 @@ items.forEach(item => {
   li.className = "px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer";
   li.textContent = item;
 
-  // 👉 ICI : ajoute l'écouteur de clic
+  // ajoute l'écouteur de clic
   li.addEventListener("click", () => {
     addTag(title.toLowerCase(), item); // Ex : "ingrédients", "crème de coco"
   });

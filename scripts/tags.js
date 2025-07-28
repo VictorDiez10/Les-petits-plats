@@ -1,6 +1,10 @@
+import { updateRecipeCount } from './main.js'
+
+
 const activeTags = [];
 const activeTagsContainer = document.getElementById("active-tags");
-const recipeCards = document.querySelectorAll("#recipe-container .card");
+let recipeCards = document.querySelectorAll("#recipe-container .card");
+
 
 export function addTag(type, value) {
   const existing = activeTags.find(t => t.type === type && t.value === value);
@@ -25,10 +29,10 @@ function renderTags() {
   activeTagsContainer.innerHTML = "";
   activeTags.forEach(tag => {
     const tagEl = document.createElement("div");
-    tagEl.className = "bg-yellow-300 text-black px-3 py-1 rounded flex items-center gap-2";
+    tagEl.className = "bg-[#ffd15b] text-black px-3 py-4 rounded-xl flex items-center gap-2 w-52 text-sm font-normal font-[Manrope] justify-between";
     tagEl.innerHTML = `
       <span>${tag.value}</span>
-      <button class="text-black font-bold pointer" data-value="${tag.value}">×</button>
+      <button class="text-black font-bold cursor-pointer items-center" data-value="${tag.value}">×</button>
     `;
     activeTagsContainer.appendChild(tagEl);
   });
@@ -43,9 +47,13 @@ function renderTags() {
 }
 
 function filterRecipes() {
+  if (recipeCards.length == 0) {
+    recipeCards = document.querySelectorAll("#recipe-container .card");
+  }
   recipeCards.forEach(card => {
     const text = card.textContent.toLowerCase();
     const matchAll = activeTags.every(tag => text.includes(tag.value.toLowerCase()));
     card.style.display = matchAll ? "" : "none";
   });
+  updateRecipeCount();
 }

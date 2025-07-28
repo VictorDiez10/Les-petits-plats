@@ -19,3 +19,11 @@ const ustensiles = [...new Set(
 filtersContainer.appendChild(createFilterDropdown("Ingrédients", ingredients));
 filtersContainer.appendChild(createFilterDropdown("Appareils", appareils));
 filtersContainer.appendChild(createFilterDropdown("Ustensiles", ustensiles));
+
+export function updateRecipeCount() {
+  const visibleCards = document.querySelectorAll('#recipe-container .card:not([style*="display: none"])');
+  const count = visibleCards.length;
+  const formatted = count.toString().padStart(2, '0') + ' recettes';
+  document.getElementById('recipe-count').textContent = formatted;
+}
+
